@@ -5,10 +5,17 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('=== Contact Form Debug ===');
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('API Key exists:', !!process.env.RESEND_API_KEY);
+    console.log('API Key first 10 chars:', process.env.RESEND_API_KEY?.substring(0, 10));
+    
     const { requestType, title, email, message } = await request.json();
+    console.log('Form data received:', { requestType, title, email: email?.substring(0, 5) + '***', messageLength: message?.length });
 
     // Validar datos requeridos
     if (!email || !message) {
+      console.log('Validation failed: missing email or message');
       return NextResponse.json(
         { error: 'Email and message are required' },
         { status: 400 }
@@ -24,10 +31,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log('About to send email with Resend...');
+
     // Enviar email usando Resend
-    const { data, error } = await resend.emails.send({
-      from: 'Versus Contact Form <onboarding@resend.dev>', // Usando dominio verificado de Resend
-      to: ['nbaldovino5@gmail.com'], // Temporalmente usando email verificado en Resend
+    const emailConfig = {
+      from: 'Acme <onboarding@resend.dev>', // Usando el formato más simple
+      to: ['nbaldovino5@gmail.com'], // Email verificado en Resend
       subject: `${requestType}: ${title || 'New Contact Form Submission'}`,
       html: `
         <html>
@@ -67,7 +76,10 @@ export async function POST(request: NextRequest) {
         </body>
         </html>
       `,
-    });
+    };
+
+    console.log('Email config:', { ...emailConfig, html: '[HTML_CONTENT]' });
+    const { data, error } = await resend.emails.send(emailConfig);
 
     if (error) {
       console.error('Resend error:', error);

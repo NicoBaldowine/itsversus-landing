@@ -88,11 +88,11 @@ export default function Contact() {
           });
         } else {
           const errorData = await response.json();
-          alert('Sorry, there was an error sending your message. Please try again or contact us directly at nbaldovino5@gmail.com');
+          alert('Sorry, there was an error sending your message. Please try again or contact us directly at quizlandhelp@gmail.com');
           console.error('Submit error:', errorData);
         }
       } catch (error) {
-        alert('Sorry, there was an error sending your message. Please try again or contact us directly at nbaldovino5@gmail.com');
+        alert('Sorry, there was an error sending your message. Please try again or contact us directly at quizlandhelp@gmail.com');
         console.error('Network error:', error);
       } finally {
         setIsSubmitting(false);
@@ -218,7 +218,7 @@ export default function Contact() {
                 You can also reach us directly at:
               </p>
               <p className="text-lg text-black">
-                📧 <a href="mailto:nbaldovino5@gmail.com" className="text-black underline font-bold">nbaldovino5@gmail.com</a>
+                📧 <a href="mailto:quizlandhelp@gmail.com" className="text-black underline font-bold">quizlandhelp@gmail.com</a>
               </p>
             </div>
           </div>

@@ -48,14 +48,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="mt-8 text-center">
-                <p className="text-lg text-black mb-4">
-                  Questions? Ideas? Just want to say hi?
-                </p>
-                <p className="text-lg text-black">
-                  📧 <a href="mailto:quizlandhelp@gmail.com" className="text-black underline font-bold">quizlandhelp@gmail.com</a>
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     // Enviar email usando Resend
     const emailConfig = {
       from: 'Acme <onboarding@resend.dev>', // Usando el formato más simple
-      to: ['nbaldovino5@gmail.com'], // Email verificado en Resend
+      to: ['quizlandhelp@gmail.com'], // Email de contacto del proyecto
       subject: `${requestType}: ${title || 'New Contact Form Submission'}`,
       html: `
         <html>

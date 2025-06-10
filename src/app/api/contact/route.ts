@@ -26,49 +26,54 @@ export async function POST(request: NextRequest) {
 
     // Enviar email usando Resend
     const { data, error } = await resend.emails.send({
-      from: 'Versus Contact Form <delivered@resend.dev>', // Usando dominio verificado de Resend
+      from: 'Versus Contact Form <onboarding@resend.dev>', // Usando dominio verificado de Resend
       to: ['nbaldovino5@gmail.com'], // Temporalmente usando email verificado en Resend
       subject: `${requestType}: ${title || 'New Contact Form Submission'}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333; border-bottom: 2px solid #000; padding-bottom: 10px;">
-            New Contact Form Submission
-          </h2>
-          
-          <div style="margin: 20px 0;">
-            <strong>Request Type:</strong> ${requestType}
-          </div>
-          
-          ${title ? `
-          <div style="margin: 20px 0;">
-            <strong>Title:</strong> ${title}
-          </div>
-          ` : ''}
-          
-          <div style="margin: 20px 0;">
-            <strong>From:</strong> ${email}
-          </div>
-          
-          <div style="margin: 20px 0;">
-            <strong>Message:</strong>
-            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 10px;">
-              ${message.replace(/\n/g, '<br>')}
+        <html>
+        <body style="font-family: Arial, sans-serif; margin: 0; padding: 20px;">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #333; border-bottom: 2px solid #000; padding-bottom: 10px;">
+              New Contact Form Submission
+            </h2>
+            
+            <div style="margin: 20px 0;">
+              <strong>Request Type:</strong> ${requestType || 'Not specified'}
             </div>
+            
+            ${title ? `
+            <div style="margin: 20px 0;">
+              <strong>Title:</strong> ${title}
+            </div>
+            ` : ''}
+            
+            <div style="margin: 20px 0;">
+              <strong>From:</strong> ${email}
+            </div>
+            
+            <div style="margin: 20px 0;">
+              <strong>Message:</strong>
+              <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                ${(message || '').replace(/\n/g, '<br>').replace(/</g, '&lt;').replace(/>/g, '&gt;')}
+              </div>
+            </div>
+            
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+            
+            <p style="color: #666; font-size: 12px;">
+              This email was sent from the Versus App contact form at itsversus.app
+            </p>
           </div>
-          
-          <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
-          
-          <p style="color: #666; font-size: 12px;">
-            This email was sent from the Versus App contact form at itsversus.app
-          </p>
-        </div>
+        </body>
+        </html>
       `,
     });
 
     if (error) {
       console.error('Resend error:', error);
+      console.error('Error details:', JSON.stringify(error, null, 2));
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: 'Failed to send email', details: process.env.NODE_ENV === 'development' ? error : 'Contact support' },
         { status: 500 }
       );
     }

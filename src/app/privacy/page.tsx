@@ -75,7 +75,7 @@ export default function Privacy() {
                 5. Account and Data Deletion
               </h2>
               <p className="mb-6 text-black">
-                If you&apos;d like your account or data removed, you can contact our support team via the Help section in the app or email us at contact@itsversus.app. We will handle your request promptly.
+                If you&apos;d like your account or data removed, you can contact our support team via the Help section in the app or email us at quizlandhelp@gmail.com. We will handle your request promptly.
               </p>
 
               <h2 className="font-bold font-inter-tight text-black text-2xl mt-8 mb-4">
@@ -119,7 +119,7 @@ export default function Privacy() {
               <p className="mb-6 text-black">
                 For questions or requests related to this Privacy Policy, please contact us at:
                 <br />
-                📧 <a href="mailto:contact@itsversus.app" className="text-black underline">contact@itsversus.app</a>
+                📧 <a href="mailto:quizlandhelp@gmail.com" className="text-black underline">quizlandhelp@gmail.com</a>
               </p>
             </div>
           </div>

@@ -53,7 +53,7 @@ export default function About() {
                   Questions? Ideas? Just want to say hi?
                 </p>
                 <p className="text-lg text-black">
-                  📧 <a href="mailto:contact@itsversus.app" className="text-black underline font-bold">contact@itsversus.app</a>
+                  📧 <a href="mailto:quizlandhelp@gmail.com" className="text-black underline font-bold">quizlandhelp@gmail.com</a>
                 </p>
               </div>
             </div>

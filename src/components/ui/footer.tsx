@@ -18,6 +18,8 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
       router.push('/terms');
     } else if (buttonName === 'About us') {
       router.push('/about');
+    } else if (buttonName === 'Contact us') {
+      router.push('/contact/');
     } else {
       console.log(`${buttonName} clicked!`);
     }

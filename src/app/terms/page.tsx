@@ -139,7 +139,7 @@ export default function Terms() {
               <p className="mb-6 text-black">
                 For questions or concerns, contact us at:
                 <br />
-                📧 <a href="mailto:contact@itsversus.app" className="text-black underline">contact@itsversus.app</a>
+                📧 <a href="mailto:quizlandhelp@gmail.com" className="text-black underline">quizlandhelp@gmail.com</a>
               </p>
             </div>
           </div>

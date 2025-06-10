@@ -1,20 +1,28 @@
 "use client";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { Header, Hero, FirstBlock, SecondBlock, ThirdBlock, Footer } from "@/components/ui";
 
-export default function RootPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace('/home');
-  }, [router]);
+export default function Home() {
+  const handleButtonClick = () => {
+    console.log("Download App clicked!");
+  };
 
   return (
-    <div className="min-h-screen bg-[#FFF8E7] flex items-center justify-center">
-      <div className="text-black text-opacity-50 font-inter-tight font-extrabold text-2xl">
-        Redirecting...
-      </div>
+    <div className="min-h-screen bg-[#FFF8E7]">
+      <Header 
+        buttonText="Download App"
+        onButtonClick={handleButtonClick}
+      />
+      
+      <Hero />
+      
+      <FirstBlock />
+      
+      <SecondBlock />
+      
+      <ThirdBlock />
+      
+      <Footer />
     </div>
   );
 } 

@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
   const router = useRouter();
 
   const handleLogoClick = () => {
-    router.push('/home');
+    router.push('/');
   };
 
   return (

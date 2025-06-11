@@ -1,0 +1,26 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "Y28T5WW898.com.nicobaldovino.versusapp"
+        ],
+        "components": [
+          {
+            "/": "/reset-password",
+            "comment": "Password reset deep link"
+          },
+          {
+            "/": "/verify-email", 
+            "comment": "Email verification deep link"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "Y28T5WW898.com.nicobaldovino.versusapp"
+    ]
+  }
+} 

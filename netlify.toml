@@ -5,6 +5,22 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+
+# No redirect for specific paths
+[[redirects]]
+  from = "/reset-password"
+  to = "/reset-password/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/verify-email"
+  to = "/verify-email/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

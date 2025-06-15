@@ -78,7 +78,7 @@ export default function Contact() {
         });
 
         if (response.ok) {
-          alert('Thank you for your message! We\'ll get back to you soon.');
+          alert('¡Gracias por tu mensaje! Nos pondremos en contacto pronto.');
           // Reset form
           setFormData({
             requestType: 'Help',
@@ -88,11 +88,11 @@ export default function Contact() {
           });
         } else {
           const errorData = await response.json();
-          alert('Sorry, there was an error sending your message. Please try again or contact us directly at quizlandhelp@gmail.com');
+          alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente más tarde.');
           console.error('Submit error:', errorData);
         }
       } catch (error) {
-        alert('Sorry, there was an error sending your message. Please try again or contact us directly at quizlandhelp@gmail.com');
+        alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente más tarde.');
         console.error('Network error:', error);
       } finally {
         setIsSubmitting(false);
@@ -213,6 +213,7 @@ export default function Contact() {
             </form>
 
             {/* Additional Contact Info */}
+            {/*
             <div className="mt-12 text-center p-6 bg-black/[0.05] rounded-2xl">
               <p className="text-lg text-black mb-2">
                 You can also reach us directly at:
@@ -221,6 +222,7 @@ export default function Contact() {
                 📧 <a href="mailto:quizlandhelp@gmail.com" className="text-black underline font-bold">quizlandhelp@gmail.com</a>
               </p>
             </div>
+            */}
           </div>
         </div>
       </main>

@@ -9,8 +9,8 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Versus - Landing Page",
-  description: "Una landing page simple y elegante",
+  title: "Versus.app - Find and play pickleball effortlessly",
+  description: "Turn your free time into play time. Pickleball made easy.",
 };
 
 export default function RootLayout({

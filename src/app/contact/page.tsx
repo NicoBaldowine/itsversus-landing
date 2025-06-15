@@ -78,7 +78,7 @@ export default function Contact() {
         });
 
         if (response.ok) {
-          alert('¡Gracias por tu mensaje! Nos pondremos en contacto pronto.');
+          alert('Thank you for your message! We will get back to you soon.');
           // Reset form
           setFormData({
             requestType: 'Help',
@@ -88,11 +88,11 @@ export default function Contact() {
           });
         } else {
           const errorData = await response.json();
-          alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente más tarde.');
+          alert('There was an error sending your message. Please try again later.');
           console.error('Submit error:', errorData);
         }
       } catch (error) {
-        alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente más tarde.');
+        alert('There was an error sending your message. Please try again later.');
         console.error('Network error:', error);
       } finally {
         setIsSubmitting(false);

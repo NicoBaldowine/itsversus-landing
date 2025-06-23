@@ -4,7 +4,7 @@ import { Header, Hero, FirstBlock, SecondBlock, ThirdBlock, Footer } from "@/com
 
 export default function Home() {
   const handleButtonClick = () => {
-    console.log("Download App clicked!");
+    window.open('https://apps.apple.com/us/app/versus-app/id6747095068', '_blank');
   };
 
   return (

@@ -17,7 +17,7 @@ export default function Contact() {
   });
 
   const handleButtonClick = () => {
-    console.log("Download App clicked!");
+    window.open('https://apps.apple.com/us/app/versus-app/id6747095068', '_blank');
   };
 
   const validateEmail = (email: string) => {

@@ -4,7 +4,7 @@ import { Header, Footer } from "@/components/ui";
 
 export default function Terms() {
   const handleButtonClick = () => {
-    console.log("Download App clicked!");
+    window.open('https://apps.apple.com/us/app/versus-app/id6747095068', '_blank');
   };
 
   return (
